@@ -1,0 +1,11 @@
+# udevadm control --reload
+# lsusb
+#   Bus 004 Device 012: ID 0951:16ae Kingston Technology DT microDuo 3C
+# udevadm info -a -n /dev/sda       # get list of ATTR.S for sda
+# sudo journalctl -f        # to debug rules
+
+ACTION=="add"
+ATTRS{idVendor}=="0951"
+ATTRS{idProduct}=="16ae"
+RUN+="echo YOLO > /tmp/usb_sync.log"
+# bash /home/lunics/downloads/usb_sync/usb_sync.sh"

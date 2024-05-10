@@ -1,0 +1,8 @@
+- block:
+  - name: template > Generate udev rules
+    template:
+      src:  "{{ item.name }}"
+      dest: "/etc/udev/rules.d/{{ item.name }}"
+    loop: "{{ udev_rules }}"
+
+  tags: udev

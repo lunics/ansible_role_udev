@@ -1,0 +1,5 @@
+SUBSYSTEM=="usb"
+ACTION=="remove"
+ENV{DEVTYPE}=="usb_device"
+ENV{PRODUCT}="{{ item.env_product }}"
+RUN+="{{ item.path_script }}"
