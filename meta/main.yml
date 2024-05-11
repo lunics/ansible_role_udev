@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name:    udev
+  author:       lunics
+  description:  A role to manage udev rules.
+  license:      GPL-3.0
+  company:      none
+  min_ansible_version: 2.1
+  platforms:
+    - name: Archlinux
+      versions:
+        - all
+  galaxy_tags:
+    - udev
+    - udevadm
+    - rules
+
+dependencies: []
