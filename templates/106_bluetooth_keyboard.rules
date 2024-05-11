@@ -1,6 +1,0 @@
-ACTION=="add"
-ATTRS{name}=="MX Keys Mini"
-ENV{XKBMODEL}="pc105"
-ENV{XKBLAYOUT}="fr"
-ENV{XKBOPTIONS}="caps:escape"
-RUN+="xset r rate 200 50"

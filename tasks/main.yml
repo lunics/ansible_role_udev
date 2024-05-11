@@ -1,7 +1,7 @@
 - block:
   - name: Add udev rules
     template:
-      src:   "{{ item.name }}"
+      src:   "{{ inventory_dir }}/files/udev/{{ item.name }}"
       dest:  "/etc/udev/rules.d/{{ item.name }}"
     notify: Reload udev rules
     when: item.state is not defined or item.state == "present"
