@@ -1,8 +1,18 @@
 - block:
-  - name: template > Generate udev rules
+  - name: Add udev rules
     template:
-      src:  "{{ item.name }}"
-      dest: "/etc/udev/rules.d/{{ item.name }}"
+      src:   "{{ item.name }}"
+      dest:  "/etc/udev/rules.d/{{ item.name }}"
+    notify: Reload udev rules
+    when: item.state is not defined or item.state == "present"
+    loop: "{{ udev_rules }}"
+
+  - name: Remove udev rules
+    file:
+      path:  "/etc/udev/rules.d/{{ item.name }}"
+      state: absent
+    notify: Reload udev rules
+    when: item.state is defined and item.state == "absent"
     loop: "{{ udev_rules }}"
 
   tags: udev
