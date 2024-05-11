@@ -1,0 +1,4 @@
+udev_rules: []
+  # - name:        101_usb_removed.rules
+  #   env_product: "1020/406"
+  #   path_script: /path/script.sh
